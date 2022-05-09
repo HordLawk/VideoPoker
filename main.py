@@ -1,16 +1,11 @@
-from re import S
-
-from sqlalchemy import true
-
-
 from score import Score
 from deck import Deck
 
 s = Score()
-d = Deck()
-while s.balance and len(d.free):
+while s.balance:
+    d = Deck()
     print("Saldo atual: ${}".format(s.balance))
-    while true:
+    while True:
         valStr = input("Digite o valor da aposta ou 'F' para terminar ==> ")
         if valStr == "F":
             exit()
@@ -34,5 +29,4 @@ while s.balance and len(d.free):
     else:
         print("Peninha... não ganhou nada nessa rodada")
     input("Tecle enter para continuar")
-    d.switchAll()
-print("Voce terminou o jogo com ${}".format(s.balance))
+print("Seu saldo acabou")

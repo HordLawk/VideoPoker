@@ -41,4 +41,5 @@ class Score:
                 mult = 1
         earnings = self.currentBet * mult
         self.balance += earnings
-        return earnings - self.currentBet
+        self.currentBet = 0
+        return earnings
